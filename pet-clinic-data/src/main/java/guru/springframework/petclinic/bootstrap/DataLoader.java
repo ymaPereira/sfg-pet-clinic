@@ -1,10 +1,10 @@
 package guru.springframework.petclinic.bootstrap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import guru.springframework.petclinic.models.*;
 import guru.springframework.petclinic.services.*;
-import guru.springframework.petclinic.services.map.*;
 
 @Component
 public class DataLoader implements CommandLineRunner{
@@ -14,16 +14,12 @@ public class DataLoader implements CommandLineRunner{
 	/*private final PetService petService;
 	private final PersonService personService;*/
 	
-	
-	
-	public DataLoader() {
+	@Autowired
+	public DataLoader(OwnerService ownerService, VetService vetService) {
 		super();
-		this.ownerService = new OwnerServiceMap();
-		this.vetService = new VetServiceMap();
-		/*this.petService = new PetServiceMap();
-		this.personService = new PersonServiceMap();*/
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
-
 
 
 	@Override
@@ -53,5 +49,6 @@ public class DataLoader implements CommandLineRunner{
 		vet2.setLastName("Porter");
 		vetService.save(vet2);
 	}
+
 
 }
