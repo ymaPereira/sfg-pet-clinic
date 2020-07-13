@@ -2,13 +2,13 @@ package guru.springframework.petclinic.models;
 
 public class BaseEntity {
 
-	private Long id;
+	private String id;
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	

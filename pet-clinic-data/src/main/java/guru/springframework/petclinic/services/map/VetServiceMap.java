@@ -6,7 +6,7 @@ import guru.springframework.petclinic.models.Vet;
 import guru.springframework.petclinic.services.VetService;
 
 @Service
-public class VetServiceMap extends AbstractServiceMap<Vet, Long> implements VetService{
+public class VetServiceMap extends AbstractServiceMap<Vet, String> implements VetService{
 
 	@Override
 	public Vet save(Vet object) {

@@ -6,7 +6,7 @@ import guru.springframework.petclinic.models.Owner;
 import guru.springframework.petclinic.services.OwnerService;
 
 @Service
-public class OwnerServiceMap extends AbstractServiceMap<Owner, Long> implements OwnerService{
+public class OwnerServiceMap extends AbstractServiceMap<Owner, String> implements OwnerService{
 
 	@Override
 	public Owner save(Owner object) {
