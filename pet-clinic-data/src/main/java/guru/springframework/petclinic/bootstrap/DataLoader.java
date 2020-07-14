@@ -14,17 +14,19 @@ public class DataLoader implements CommandLineRunner{
 	private final OwnerService ownerService;
 	private final VetService vetService;
 	private final PetTypeService petTypeService;
+	private final SpecialitesService specialitesService;
 	/*private final PetService petService;
 	private final PersonService personService;*/
 	
 	@Autowired
-	public DataLoader(OwnerService ownerService, VetService vetService,PetTypeService petTypeService) {
+	public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
+			SpecialitesService specialitesService) {
 		super();
 		this.ownerService = ownerService;
 		this.vetService = vetService;
 		this.petTypeService = petTypeService;
+		this.specialitesService = specialitesService;
 	}
-
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -69,16 +71,28 @@ public class DataLoader implements CommandLineRunner{
 		pet2.setName("Just Cat");
 		owner2.getPets().add(pet2);
 		
+		System.out.println("Save specialities");
+		Speciality sp1 = new Speciality();
+		sp1.setDescription("Speciality 1");
+		sp1 = specialitesService.save(sp1);
+		
+
+		Speciality sp2 = new Speciality();
+		sp2.setDescription("Speciality 2");
+		sp2 = specialitesService.save(sp2);
+		
 		System.out.println("Save vets...");
 		Vet vet1 = new Vet();
 		vet1.setFirstName("Sam");
 		vet1.setLastName("Axe");
-		vetService.save(vet1);
+		vet1.getSpecialities().add(sp1);
+		vet1 = vetService.save(vet1);
 
 		Vet vet2 = new Vet();
 		vet2.setFirstName("Jessie");
 		vet2.setLastName("Porter");
-		vetService.save(vet2);
+		vet2.getSpecialities().add(sp2);
+		vet2 = vetService.save(vet2);
 	}
 
 
