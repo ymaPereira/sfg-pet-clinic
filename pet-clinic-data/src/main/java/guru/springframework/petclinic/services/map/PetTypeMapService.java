@@ -1,7 +1,6 @@
 package guru.springframework.petclinic.services.map;
 
 import org.springframework.stereotype.Service;
-
 import guru.springframework.petclinic.models.PetType;
 import guru.springframework.petclinic.services.PetTypeService;
 
