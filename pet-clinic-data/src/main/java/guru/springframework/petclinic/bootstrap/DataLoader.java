@@ -1,5 +1,7 @@
 package guru.springframework.petclinic.bootstrap;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -39,13 +41,34 @@ public class DataLoader implements CommandLineRunner{
 		Owner owner1 = new Owner();
 		owner1.setFirstName("Michael");
 		owner1.setLastName("Weston");
-		ownerService.save(owner1);
+		owner1.setAddress("XPTO");
+		owner1.setCity("Praia");
+		owner1.setTelephone("9999999");
+		owner1 = ownerService.save(owner1);
+		
+		Pet pet1 = new Pet();
+		pet1.setOwner(owner1);
+		pet1.setPetType(dog);
+		pet1.setBirthDate(LocalDate.of(01, 01, 2020));
+		pet1.setName("Rosco");
+		owner1.getPets().add(pet1);
 		
 		Owner owner2 = new Owner();
 		owner2.setFirstName("Fiona");
 		owner2.setLastName("Weston");
-		ownerService.save(owner2);
+		owner2.setAddress("YPTO");
+		owner2.setCity("Praia");
+		owner2.setTelephone("9999991");
+		owner2 = ownerService.save(owner2);
 
+
+		Pet pet2 = new Pet();
+		pet2.setOwner(owner2);
+		pet2.setPetType(cat);
+		pet2.setBirthDate(LocalDate.of(01, 02, 2020));
+		pet2.setName("Just Cat");
+		owner2.getPets().add(pet2);
+		
 		System.out.println("Save vets...");
 		Vet vet1 = new Vet();
 		vet1.setFirstName("Sam");
