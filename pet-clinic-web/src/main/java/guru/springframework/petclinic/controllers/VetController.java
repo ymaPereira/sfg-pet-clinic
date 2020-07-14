@@ -25,4 +25,9 @@ public class VetController {
 		model.addAttribute("vets", vetService.findAll());
 		return "vets/index";
 	}
+	
+	@RequestMapping({"/find"})
+	public String findVets() {
+		return "notimplemented";
+	}
 }
