@@ -5,7 +5,7 @@ import guru.springframework.petclinic.models.PetType;
 import guru.springframework.petclinic.services.PetTypeService;
 
 @Service
-public class PetTypeMapService extends AbstractServiceMap<PetType, String> implements PetTypeService{
+public class PetTypeMapService extends AbstractServiceMap<PetType, Long> implements PetTypeService{
 
 	@Override
 	public PetType save(PetType object) {

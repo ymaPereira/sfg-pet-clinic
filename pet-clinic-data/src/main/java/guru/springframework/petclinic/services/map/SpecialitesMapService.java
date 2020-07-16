@@ -6,7 +6,7 @@ import guru.springframework.petclinic.models.Speciality;
 import guru.springframework.petclinic.services.SpecialitesService;
 
 @Service
-public class SpecialitesMapService extends AbstractServiceMap<Speciality, String> implements SpecialitesService{
+public class SpecialitesMapService extends AbstractServiceMap<Speciality, Long> implements SpecialitesService{
 
 	@Override
 	public Speciality save(Speciality object) {

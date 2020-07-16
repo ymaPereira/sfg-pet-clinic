@@ -6,7 +6,7 @@ import guru.springframework.petclinic.models.Person;
 import guru.springframework.petclinic.services.PersonService;
 
 @Service
-public class PersonServiceMap extends AbstractServiceMap<Person, String> implements PersonService {
+public class PersonServiceMap extends AbstractServiceMap<Person, Long> implements PersonService {
 
 	@Override
 	public Person save(Person object) {

@@ -7,7 +7,7 @@ import guru.springframework.petclinic.services.SpecialitesService;
 import guru.springframework.petclinic.services.VetService;
 
 @Service
-public class VetServiceMap extends AbstractServiceMap<Vet, String> implements VetService{
+public class VetServiceMap extends AbstractServiceMap<Vet, Long> implements VetService{
 
 	private final SpecialitesService specialityService;
 	

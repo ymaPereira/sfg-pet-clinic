@@ -9,7 +9,7 @@ import guru.springframework.petclinic.services.PetService;
 import guru.springframework.petclinic.services.PetTypeService;
 
 @Service
-public class OwnerServiceMap extends AbstractServiceMap<Owner, String> implements OwnerService{
+public class OwnerServiceMap extends AbstractServiceMap<Owner, Long> implements OwnerService{
 
 	private final PetService petService;
 	private final PetTypeService petTypeService;
