@@ -31,6 +31,7 @@ guru\springframework\petclinic\services\PetTypeService.class
 guru\springframework\petclinic\services\SpecialitesService.class
 guru\springframework\petclinic\models\BaseEntity.class
 guru\springframework\petclinic\repositories\PetRespository.class
+guru\springframework\petclinic\services\map\VisitMapService.class
 guru\springframework\petclinic\helpers\ConstantProfile.class
 guru\springframework\petclinic\services\map\AbstractServiceMap.class
 guru\springframework\petclinic\springdatajpa\SpecialityJPAService.class

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import guru.springframework.petclinic.services.PetService;
 
 @Controller
-@RequestMapping("/pet")
+@RequestMapping("/pets")
 public class PetController {
 
 	private final PetService petService;
