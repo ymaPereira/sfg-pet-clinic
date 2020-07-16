@@ -1,8 +1,21 @@
 package guru.springframework.petclinic.models;
 
-public class Person extends BaseEntity{
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+import com.sun.istack.NotNull;
 
+@MappedSuperclass
+public class Person extends BaseEntity{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Column(name = "first_name")
+	@NotNull
 	private String firstName;
+	@Column(name = "last_name")
+	@NotNull
 	private String lastName;
 	
 	public String getFirstName() {
