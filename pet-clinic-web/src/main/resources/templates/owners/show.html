@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Details of Owner</title>
+</head>
+<body>
+	<h2 th:text="'Owner Information: '+${owner.firstName}">Owner Information</h2>
+	<table  class="table table-striped">
+		<tbody>
+			<tr>
+				<td>ID</td>
+				<td th:text="${owner.id}">---</td>
+			</tr>
+			<tr>
+				<td>First Name</td>
+				<td th:text="${owner.firstName}">---</td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td th:text="${owner.lastName}">---</td>
+			</tr>
+			<tr>
+				<td>Address</td>
+				<td th:text="${owner.address}">---</td>
+			</tr>
+			<tr>
+				<td>City</td>
+				<td th:text="${owner.city}">---</td>
+			</tr>
+			<tr>
+				<td>Telephone</td>
+				<td th:text="${owner.telephone}">---</td>
+			</tr>
+		</tbody>
+	</table>
+	<br/>
+	<h2 th:text="'Pets and Visits'"></h2>
+	<table  class="table table-striped">
+		<tbody th:each="pet : ${owner.pets}">
+			<tr>
+				<td>Name</td>
+				<td th:text="${pet.name}">---</td>
+			</tr>
+			<tr>
+				<td>Birth Date</td>
+				<td th:text="${pet.birthDate}">---</td>
+			</tr>
+			<tr>
+				<td>Type</td>
+				<td th:text="${pet.petType.name}">---</td>
+			</tr>
+			<tr>
+				<td>Total Visit</td>
+				<td th:text="${pet.visits.size()}">---</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
